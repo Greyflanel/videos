@@ -8,6 +8,7 @@ class App extends React.Component {
   state = { videos: [], selectedVideo: null };
 
 componentDidMount() {
+    //Sets the default search 'term'
     this.onTermSubmit('family guy')
 }
 
@@ -17,7 +18,7 @@ componentDidMount() {
         q: term
       }
     });
-
+/* selectedVideo is set on state to render the first  video in the list as the initial embedded video */
     this.setState({ videos: response.data.items,
     selectedVideo: response.data.items[0] });
   };
